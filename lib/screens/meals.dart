@@ -1,16 +1,16 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ScreenMeals extends StatelessWidget {
-  final String categoryID;
-  final String categoryTitle;
-
-  const ScreenMeals(this.categoryID, this.categoryTitle, {super.key});
+  const ScreenMeals({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)?.settings.arguments as Map<String, String>;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(categoryTitle),
+        title: Text(args["title"] ?? "Error"),
       ),
       body: Center(
         child: const Text("The recipes for the category"),
