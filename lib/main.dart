@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           titleTextStyle: TextStyle(
             fontFamily: "RobotoCondensed",
+            fontWeight: FontWeight.w300,
             fontSize: 24,
           ),
         ),

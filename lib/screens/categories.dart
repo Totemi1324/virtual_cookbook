@@ -22,7 +22,7 @@ class ScreenCategories extends StatelessWidget {
         ),
         children: categories
             .map((category) =>
-                CategoryItem(category.title, category.backgroundColor))
+                CategoryItem(category.id, category.title, category.backgroundColor))
             .toList(),
       ),
     );
