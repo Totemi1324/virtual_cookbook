@@ -2,6 +2,88 @@ import '../models/meal.dart';
 
 List<Meal> meals = [
   Meal(
+    id: "m1",
+    categories: ["1", "7"],
+    name: "Spaghetti with Tomato Sauce",
+    imageURL:
+        "https://ais.kochbar.de/kbrezept/435538_1137799/24-05goci/600x450/1687/spaghetti-napoli-rezept-bild-nr-2.jpg",
+    ingredients: [
+      {"amount": 250, "unit": "g", "name": "spaghetti"},
+      {"amount": 1, "unit": "can", "name": "chopped tomatoes"},
+      {"amount": 1, "unit": "tbsp", "name": "tomato paste"},
+      {"amount": 1, "name": "onion"},
+      {"amount": 1, "unit": "tbsp", "name": "olive oil"},
+      {"amount": 300, "unit": "ml", "name": "veggie stock"},
+      {"amount": 3, "unit": "cloves", "name": "garlic"},
+      {"amount": 10, "unit": "leaves", "name": "basil"},
+      {"amount": 1, "unit": "tsp", "name": "dried oregano"},
+      {"amount": 1, "unit": "tbsp", "name": "cold butter"},
+    ],
+    prepSteps: [
+      "Following package directions, cook the spaghetti until al-dente.",
+      "Peel and finely chop the onion. Heat the olive oil in a big pot and add the onion along with the garlic and tomato paste. Cook until glossy and clear.",
+      "Fill up the pot with the tomatoes and stock and add the herbs. Simmer over medium heat for 10 minutes.",
+      "Stir in the butter in one piece. After that, remove the heat.",
+      "Lastly, mix in the pasta and serve with fresh basil leaves.",
+    ],
+    durationInMinutes: 20,
+    complexity: Complexity.simple,
+    affordability: Affordability.costly,
+    isVegetarian: true
+  ),
+  Meal(
+    id: "m2",
+    categories: ["2", "6"],
+    name: "Toast Hawaii",
+    imageURL:
+        "https://www.daskochrezept.de/sites/daskochrezept.de/files/styles/700_530/public/2021-06/hawaii_toast_ofen_2.jpg",
+    ingredients: [
+      {"amount": 5, "unit": "slices", "name": "toast"},
+      {"amount": 1, "unit": "can", "name": "ananas rings"},
+      {"amount": 100, "unit": "g", "name": "sliced ham"},
+      {"amount": 150, "unit": "g", "name": "sliced cheese"},
+      {"amount": 5, "name": "cocktail cherries"},
+    ],
+    prepSteps: [
+      "Toast the bread for 2 minutes and lay out on a parchment-lined baking sheet.",
+      "Drain the liquid from the ananas.",
+      "Preheat the oven to 200°C. Top the toasts with one slice of ham, ananas and cheese each.",
+      "Bake the result for 10 minutes until the cheese is golden brown.",
+      "Top the toasts with the cocktail cherries. Serve with butter while hot.",
+    ],
+    durationInMinutes: 15,
+    complexity: Complexity.simple,
+    affordability: Affordability.affordable,
+  ),
+  Meal(
+    id: "m3",
+    categories: ["3"],
+    name: "Classic Hamburger",
+    imageURL:
+        "https://images.lecker.de/classic-burger-b-f4567207,id=ba2c5be1,b=lecker,w=610,cg=c.jpg",
+    ingredients: [
+      {"amount": 350, "unit": "g", "name": "ground meat"},
+      {"amount": 2, "name": "onions"},
+      {"amount": 1, "unit": "slice", "name": "toast"},
+      {"amount": 1, "name": "egg"},
+      {"amount": 2, "unit": "tsp", "name": "Dijon mustard"},
+      {"amount": 3, "unit": "tbsp", "name": "oil"},
+      {"amount": 4, "name": "burger buns"},
+      {"name": "salad, tomatoes, pickles, ketchup"},
+    ],
+    prepSteps: [
+      "Soak the toast in a water bath. Meanwhile, peel and finely dice the onion.",
+      "Draw the liquid out from the toast. In a bowl, combine it with the meat, onion, eggs and mustard, add salt and pepper to taste.",
+      "Shape the mixture into 4 thin patties and fry in a pan coated with the oil for 3-4 minutes per side.",
+      "If not done already, cut the buns in half and toast the cut sides in the pan with the remaining fat until golden brown.",
+      "Assemble to personal preference with various vegetables and sauces. Serve with fries.",
+    ],
+    durationInMinutes: 35,
+    complexity: Complexity.simple,
+    affordability: Affordability.affordable,
+    isLactosefree: true,
+  ),
+  Meal(
     id: "m4",
     categories: ["4"],
     name: "Wiener Schnitzel",
