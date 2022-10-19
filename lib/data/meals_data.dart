@@ -1,6 +1,6 @@
 import '../models/meal.dart';
 
-List<Meal> meals = [
+const List<Meal> meals = [
   Meal(
     id: "m1",
     categories: ["1", "7"],

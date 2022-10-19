@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../data/meals_data.dart';
+
 class ScreenMeals extends StatelessWidget {
   static const routeName = "/meals";
 
@@ -9,17 +11,23 @@ class ScreenMeals extends StatelessWidget {
   Widget build(BuildContext context) {
     final args =
         ModalRoute.of(context)?.settings.arguments as Map<String, String>?;
+    final categoryId = args?["id"];
+    final categoryTitle = args?["title"];
+    final mealsFromCategory =
+        meals.where((meal) => meal.categories.contains(categoryId)).toList();
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(args?["title"] ?? "Error"),
+        title: Text(categoryTitle ?? "Error"),
       ),
-      body: ListView.builder(
-        itemBuilder: (buildContext, index) {
-
-        },
-        itemCount: ,
-      ),
+      body: mealsFromCategory.isNotEmpty
+          ? ListView.builder(
+              itemBuilder: (buildContext, index) {
+                return Text(mealsFromCategory[index].name);
+              },
+              itemCount: mealsFromCategory.length,
+            )
+          : const Text("Some error occured on the route: Data not found"),
     );
   }
 }
