@@ -45,7 +45,37 @@ class MealItem extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
+                Positioned(
+                  right: 20,
+                  bottom: 20,
+                  child: SizedBox(
+                    width: 250,
+                    child: Text(
+                      name,
+                      style: Theme.of(context).textTheme.titleLarge,
+                      softWrap: true,
+                      overflow: TextOverflow.fade,
+                      textAlign: TextAlign.right,
+                    ),
+                  ),
+                )
               ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Row(
+                children: [
+                  Row(
+                    children: [
+                      const Icon(Icons.schedule),
+                      const SizedBox(
+                        width: 6,
+                      ),
+                      Text("$durationInMinutes min.")
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),
