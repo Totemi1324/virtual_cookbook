@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/meal.dart';
+import './icon_statistic.dart';
 
 class MealItem extends StatelessWidget {
   final String name;
@@ -65,14 +66,9 @@ class MealItem extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               child: Row(
                 children: [
-                  Row(
-                    children: [
-                      const Icon(Icons.schedule),
-                      const SizedBox(
-                        width: 6,
-                      ),
-                      Text("$durationInMinutes min.")
-                    ],
+                  IconStatistic(
+                    Icons.schedule,
+                    Text("$durationInMinutes min."),
                   ),
                 ],
               ),
