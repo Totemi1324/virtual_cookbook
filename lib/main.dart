@@ -56,6 +56,20 @@ class MyApp extends StatelessWidget {
         ScreenMeals.routeName: (_) => const ScreenMeals(),
         ScreenMealDetails.routeName: (_) => const ScreenMealDetails(),
       },
+      // onGenerateRoute
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+          builder: (_) => Scaffold(
+            appBar: AppBar(
+              title: const Text("Oops!"),
+            ),
+            body: const Center(
+              child: Text(
+                  "When trying to load your requested page, we ran into an unknown error. Please contact our support!"),
+            ),
+          ),
+        );
+      },
     );
   }
 }
