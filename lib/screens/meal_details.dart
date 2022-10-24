@@ -59,6 +59,7 @@ class ScreenMealDetails extends StatelessWidget {
                       (ingredient) => Padding(
                         padding: const EdgeInsets.symmetric(vertical: 2),
                         child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Flexible(
                               flex: 4,
@@ -123,6 +124,7 @@ class ScreenMealDetails extends StatelessWidget {
                 itemCount: selectedMeal.prepSteps.length,
               ),
             ),
+            const SizedBox(height: 15)
           ],
         ),
       ),
