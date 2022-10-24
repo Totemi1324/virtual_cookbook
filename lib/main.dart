@@ -25,6 +25,11 @@ class MyApp extends StatelessWidget {
           bodyMedium: const TextStyle(
             color: Color.fromARGB(255, 20, 51, 51),
           ),
+          titleSmall: const TextStyle(
+            fontSize: 20,
+            fontFamily: "RobotoCondensed",
+            fontWeight: FontWeight.w300,
+          ),
           titleMedium: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
