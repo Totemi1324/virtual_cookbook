@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:virtual_cookbook/screens/tabs.dart';
 
 import './screens/categories.dart';
 import './screens/meals.dart';
@@ -57,7 +58,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: "/",
       routes: {
-        "/": (_) => const ScreenCategories(),
+        "/": (_) => const ScreenTabs(),
         ScreenMeals.routeName: (_) => const ScreenMeals(),
         ScreenMealDetails.routeName: (_) => const ScreenMealDetails(),
       },
