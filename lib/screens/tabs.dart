@@ -11,32 +11,43 @@ class ScreenTabs extends StatefulWidget {
 }
 
 class _ScreenTabsState extends State<ScreenTabs> {
+  final List<Widget> _pages = [
+    const ScreenCategories(),
+    const ScreenFavourites(),
+  ];
+  var _selectedPageIndex = 0;
+
+  void _onSelectPage(int index) {
+    setState(() {
+      _selectedPageIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text("CyberCook"),
-          bottom: const TabBar(
-            tabs: [
-              Tab(
-                icon: Icon(Icons.category),
-                text: "Categories",
-              ),
-              Tab(
-                icon: Icon(Icons.star),
-                text: "Favourites",
-              )
-            ],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("CyberCook"),
+      ),
+      body: _pages[_selectedPageIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: _onSelectPage,
+        unselectedItemColor: Colors.white70,
+        selectedItemColor: Colors.white,
+        currentIndex: _selectedPageIndex,
+        type: BottomNavigationBarType.shifting,
+        items: [
+          BottomNavigationBarItem(
+            backgroundColor: Theme.of(context).colorScheme.primary,
+            icon: const Icon(Icons.category),
+            label: "Categories",
           ),
-        ),
-        body: const TabBarView(
-          children: [
-            ScreenCategories(),
-            ScreenFavourites(),
-          ],
-        ),
+          BottomNavigationBarItem(
+            backgroundColor: Theme.of(context).colorScheme.primary,
+            icon: const Icon(Icons.star),
+            label: "Favourites",
+          ),
+        ],
       ),
     );
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:virtual_cookbook/screens/tabs.dart';
 
-import './screens/categories.dart';
+import './screens/tabs.dart';
 import './screens/meals.dart';
 import './screens/meal_details.dart';
 
