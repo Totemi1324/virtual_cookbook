@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepOrange,
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: Colors.deepOrange,
-          accentColor: Colors.teal,
+          accentColor: Colors.amber.shade700,
         ),
         canvasColor: const Color.fromARGB(255, 255, 237, 229),
         fontFamily: "Raleway",

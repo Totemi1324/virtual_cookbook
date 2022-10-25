@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/drawer_menu.dart';
 import './favourites.dart';
 import './categories.dart';
 
@@ -29,6 +30,7 @@ class _ScreenTabsState extends State<ScreenTabs> {
       appBar: AppBar(
         title: const Text("CyberCook"),
       ),
+      drawer: const DrawerMenu(),
       body: _pages[_selectedPageIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: _onSelectPage,
