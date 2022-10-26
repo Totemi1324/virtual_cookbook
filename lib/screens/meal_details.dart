@@ -124,9 +124,13 @@ class ScreenMealDetails extends StatelessWidget {
                 itemCount: selectedMeal.prepSteps.length,
               ),
             ),
-            const SizedBox(height: 15)
+            const SizedBox(height: 70)
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.of(context).pop(selectedMeal.id),
+        child: const Icon(Icons.delete),
       ),
     );
   }
