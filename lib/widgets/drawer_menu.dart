@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../screens/search_options.dart';
+
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({super.key});
 
-  Widget _buildOption(BuildContext buildContext, IconData icon, String name) {
+  Widget _buildOption(BuildContext buildContext, IconData icon, String name,
+      VoidCallback onTap) {
     return ListTile(
       leading: Icon(
         icon,
@@ -17,9 +20,7 @@ class DrawerMenu extends StatelessWidget {
           //fontWeight: FontWeight.bold,
         ),
       ),
-      onTap: () {
-        //...
-      },
+      onTap: onTap,
     );
   }
 
@@ -47,8 +48,19 @@ class DrawerMenu extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          _buildOption(context, Icons.restaurant_menu, "Meals"),
-          _buildOption(context, Icons.settings, "Search options")
+          _buildOption(
+            context,
+            Icons.restaurant_menu,
+            "Meals",
+            () => Navigator.of(context).pushReplacementNamed("/"),
+          ),
+          _buildOption(
+            context,
+            Icons.settings,
+            "Search options",
+            () => Navigator.of(context)
+                .pushReplacementNamed(ScreenSearchOptions.routeName),
+          ),
         ],
       ),
     );

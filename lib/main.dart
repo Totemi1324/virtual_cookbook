@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './screens/tabs.dart';
 import './screens/meals.dart';
+import './screens/search_options.dart';
 import './screens/meal_details.dart';
 
 void main() => runApp(const MyApp());
@@ -59,6 +60,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (_) => const ScreenTabs(),
         ScreenMeals.routeName: (_) => const ScreenMeals(),
+        ScreenSearchOptions.routeName: (_) => const ScreenSearchOptions(),
         ScreenMealDetails.routeName: (_) => const ScreenMealDetails(),
       },
       // onGenerateRoute
