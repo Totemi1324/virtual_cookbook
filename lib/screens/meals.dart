@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../models/meal.dart';
-import '../data/meals_data.dart';
 import '../widgets/meal_item.dart';
 
 class ScreenMeals extends StatefulWidget {
   static const routeName = "/meals";
+  final List<Meal> filteredMeals;
 
-  const ScreenMeals({super.key});
+  const ScreenMeals(this.filteredMeals, {super.key});
 
   @override
   State<ScreenMeals> createState() => _ScreenMealsState();
@@ -25,7 +25,7 @@ class _ScreenMealsState extends State<ScreenMeals> {
     categoryId = args?["id"];
     categoryTitle = args?["title"];
     mealsFromCategory =
-        meals.where((meal) => meal.categories.contains(categoryId)).toList();
+        widget.filteredMeals.where((meal) => meal.categories.contains(categoryId)).toList();
     super.didChangeDependencies();
   }
 

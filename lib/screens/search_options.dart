@@ -4,8 +4,9 @@ import '../widgets/drawer_menu.dart';
 
 class ScreenSearchOptions extends StatefulWidget {
   static const routeName = "/search_options";
+  final Function saveFilters;
 
-  const ScreenSearchOptions({super.key});
+  const ScreenSearchOptions(this.saveFilters, {super.key});
 
   @override
   State<ScreenSearchOptions> createState() => _ScreenSearchOptionsState();
@@ -31,6 +32,12 @@ class _ScreenSearchOptionsState extends State<ScreenSearchOptions> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("CyberCook"),
+        actions: [
+          IconButton(
+            onPressed: () => widget.saveFilters({}),
+            icon: const Icon(Icons.save),
+          ),
+        ],
       ),
       drawer: const DrawerMenu(),
       body: Column(
@@ -64,7 +71,8 @@ class _ScreenSearchOptionsState extends State<ScreenSearchOptions> {
                       _lactoseFree = value;
                     });
                   },
-                ),_buildFilterSelector(
+                ),
+                _buildFilterSelector(
                   "Vegetarian",
                   "Only include meals that don't contain meat.",
                   _vegetarian,
@@ -73,7 +81,8 @@ class _ScreenSearchOptionsState extends State<ScreenSearchOptions> {
                       _vegetarian = value;
                     });
                   },
-                ),_buildFilterSelector(
+                ),
+                _buildFilterSelector(
                   "Vegan",
                   "Only include meals that don't contain animal products.",
                   _vegan,
