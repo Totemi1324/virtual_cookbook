@@ -96,7 +96,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
         "/": (_) => const ScreenTabs(),
         ScreenMeals.routeName: (_) => ScreenMeals(_filteredMeals),
-        ScreenSearchOptions.routeName: (_) => ScreenSearchOptions(_setFilters),
+        ScreenSearchOptions.routeName: (_) => ScreenSearchOptions(_setFilters, _filters),
         ScreenMealDetails.routeName: (_) => const ScreenMealDetails(),
       },
       // onGenerateRoute

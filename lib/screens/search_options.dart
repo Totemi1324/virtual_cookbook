@@ -5,8 +5,9 @@ import '../widgets/drawer_menu.dart';
 class ScreenSearchOptions extends StatefulWidget {
   static const routeName = "/search_options";
   final Function saveFilters;
+  final Map<String, bool> currentFilters;
 
-  const ScreenSearchOptions(this.saveFilters, {super.key});
+  const ScreenSearchOptions(this.saveFilters, this.currentFilters, {super.key});
 
   @override
   State<ScreenSearchOptions> createState() => _ScreenSearchOptionsState();
@@ -17,6 +18,15 @@ class _ScreenSearchOptionsState extends State<ScreenSearchOptions> {
   var _lactoseFree = false;
   var _vegetarian = false;
   var _vegan = false;
+
+  @override
+  void initState() {
+    _glutenFree = widget.currentFilters["glutenFree"]!;
+    _lactoseFree = widget.currentFilters["lactoseFree"]!;
+    _vegetarian = widget.currentFilters["vegetarian"]!;
+    _vegan = widget.currentFilters["vegan"]!;
+    super.initState();
+  }
 
   Widget _buildFilterSelector(String title, String subtitle, bool currentValue,
           Function(bool) updateValue) =>
@@ -34,7 +44,12 @@ class _ScreenSearchOptionsState extends State<ScreenSearchOptions> {
         title: const Text("CyberCook"),
         actions: [
           IconButton(
-            onPressed: () => widget.saveFilters({}),
+            onPressed: () => widget.saveFilters({
+              "glutenFree": _glutenFree,
+              "lactoseFree": _lactoseFree,
+              "vegetarian": _vegetarian,
+              "vegan": _vegan,
+            }),
             icon: const Icon(Icons.save),
           ),
         ],
