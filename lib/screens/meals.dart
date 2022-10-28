@@ -24,8 +24,9 @@ class _ScreenMealsState extends State<ScreenMeals> {
         ModalRoute.of(context)?.settings.arguments as Map<String, String>?;
     categoryId = args?["id"];
     categoryTitle = args?["title"];
-    mealsFromCategory =
-        widget.filteredMeals.where((meal) => meal.categories.contains(categoryId)).toList();
+    mealsFromCategory = widget.filteredMeals
+        .where((meal) => meal.categories.contains(categoryId))
+        .toList();
     super.didChangeDependencies();
   }
 
@@ -56,7 +57,13 @@ class _ScreenMealsState extends State<ScreenMeals> {
               },
               itemCount: mealsFromCategory.length,
             )
-          : const Text("Some error occured on the route: Data not found"),
+          : Center(
+              child: Text(
+                categoryTitle == null
+                    ? "Some error occured on the route: Data not found."
+                    : "No menus in this category that satisfy your filter settings.",
+              ),
+            ),
     );
   }
 }
