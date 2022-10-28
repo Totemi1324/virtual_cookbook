@@ -1,27 +1,36 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/drawer_menu.dart';
+import '../models/meal.dart';
 import './favourites.dart';
 import './categories.dart';
 
 class ScreenTabs extends StatefulWidget {
-  const ScreenTabs({super.key});
+  final List<Meal> favourites;
+
+  const ScreenTabs(this.favourites, {super.key});
 
   @override
   State<ScreenTabs> createState() => _ScreenTabsState();
 }
 
 class _ScreenTabsState extends State<ScreenTabs> {
-  final List<Widget> _pages = [
-    const ScreenCategories(),
-    const ScreenFavourites(),
-  ];
+  var _pages = List<Widget>.empty();
   var _selectedPageIndex = 0;
 
   void _onSelectPage(int index) {
     setState(() {
       _selectedPageIndex = index;
     });
+  }
+
+  @override
+  void initState() {
+    _pages = [
+      const ScreenCategories(),
+      ScreenFavourites(widget.favourites),
+    ];
+    super.initState();
   }
 
   @override
